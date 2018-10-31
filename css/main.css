@@ -1097,3 +1097,8 @@ article {
   font-size: 6.5em !important;
   margin-top: -60px;
 }
+
+.error-formulario{
+  font-size: 0.8em;
+  color: #A93226;
+}

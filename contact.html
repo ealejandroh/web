@@ -169,18 +169,22 @@
                         
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
                                         <input type="text" placeholder="Tu Nombre" class="form-control" name="name" id="name">
+                                        <span id="nameError" class="error-formulario"></span>
                                     </div>
                                     
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
                                         <input type="email" placeholder="Tu Email" class="form-control" name="email" id="email" >
+                                        <span id="emailError" class="error-formulario"></span>
                                     </div>
                                     
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
                                         <input type="text" placeholder="Titulo" class="form-control" name="subject" id="subject">
+                                        <span id="subjectError" class="error-formulario"></span>
                                     </div>
                                     
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
-                                        <textarea rows="6" placeholder="Mensaje" class="form-control" name="message" id="message"></textarea>    
+                                        <textarea rows="6" placeholder="Mensaje" class="form-control" name="message" id="message"></textarea>  
+                                        <span id="messageError" class="error-formulario"></span>  
                                     </div>
                                     
                                     
@@ -198,8 +202,25 @@
                                             var subject = document.getElementById('subject').value;
                                             var message = document.getElementById('message').value;
 
+                                            document.getElementById('nameError').innerHTML = '';
+                                            document.getElementById('emailError').innerHTML = '';
+                                            document.getElementById('subjectError').innerHTML = '';
+                                            document.getElementById('messageError').innerHTML = '';
+
                                             if(name == '' || email == '' || subject == '' || message == ''){
-                                                alert('Todos los cambios deben estar llenos');
+
+                                                if(name == '')
+                                                    document.getElementById('nameError').innerHTML = 'Debes ingresar un nombre';
+                                                
+                                                if(email == '')
+                                                    document.getElementById('emailError').innerHTML = 'Debes ingresar un email';
+                                                
+                                                if(subject == '')
+                                                    document.getElementById('subjectError').innerHTML = 'Debes ingresar un titulo';
+                                                
+                                                if(message == '')
+                                                    document.getElementById('messageError').innerHTML = 'Debes ingresar un mensaje';
+                                                
                                                 return false;
                                             }else{
                                                 var template_params = {
