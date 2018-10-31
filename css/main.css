@@ -1092,3 +1092,8 @@ article {
   color: #066094;
   font-weight: bold;
 }
+
+.titulo-gracias{
+  font-size: 6.5em !important;
+  margin-top: -60px;
+}
