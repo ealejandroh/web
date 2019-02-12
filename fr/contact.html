@@ -103,9 +103,9 @@
                     <div class="main-menu">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="index.html" >Accueil</a></li>
-                            <li><a href="about.html">Présentation</a></li>
+                            <li><a href="about.html">À propos</a></li>
                             <li><a href="gallery.html">Galerie</a></li>
-                            <li><a href="contact.html">Connecte-toi</a></li>
+                            <li><a href="contact.html">Contact</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="ion-android-globe"></i> Langage <span class="caret"></span></a>
                                 <div class="dropdown-menu">
@@ -132,10 +132,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2>Contáctame</h2>
+                            <h2>CONTACTEZ MOI</h2>
                             <ol class="breadcrumb">
-                                <li><a href="index.html"><i class="ion-ios-home"></i>Inicio</a></li>
-                                <li class="active">Contáctame</li>
+                                <li><a href="index.html"><i class="ion-ios-home"></i>ACCUEIL</a></li>
+                                <li class="active">CONTACTEZ MOI</li>
                             </ol>
                         </div>
                     </div>
@@ -152,27 +152,27 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="block">
-                            <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Contáctame</h2>
+                            <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Contactez moi</h2>
                             <div class="contact-form">
                                 <form id="contact-form" method="post" action="thanks.html" role="form" onsubmit="return enviarEmail();">
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
-                                        <input type="text" placeholder="Tu Nombre" class="form-control" name="name" id="name">
+                                        <input type="text" placeholder="Votre nom" class="form-control" name="name" id="name">
                                         <span id="nameError" class="error-formulario"></span>
                                     </div>
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
-                                        <input type="email" placeholder="Tu Email" class="form-control" name="email" id="email" >
+                                        <input type="email" placeholder="Votre Email" class="form-control" name="email" id="email" >
                                         <span id="emailError" class="error-formulario"></span>
                                     </div>
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
-                                        <input type="text" placeholder="Titulo" class="form-control" name="subject" id="subject">
+                                        <input type="text" placeholder="Sujet" class="form-control" name="subject" id="subject">
                                         <span id="subjectError" class="error-formulario"></span>
                                     </div>
                                     <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
-                                        <textarea rows="6" placeholder="Mensaje" class="form-control" name="message" id="message"></textarea>  
+                                        <textarea rows="6" placeholder="Votre message" class="form-control" name="message" id="message"></textarea>  
                                         <span id="messageError" class="error-formulario"></span>  
                                     </div>
                                     <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
-                                        <input type="submit" id="contact-submit" class="btn btn-default btn-send" value="Enviar mensaje">
+                                        <input type="submit" id="contact-submit" class="btn btn-default btn-send" value="Evnoyer">
                                     </div>
 
                                     <script>
@@ -192,16 +192,16 @@
                                             if(name == '' || email == '' || subject == '' || message == ''){
 
                                                 if(name == '')
-                                                    document.getElementById('nameError').innerHTML = 'Debes ingresar un nombre';
+                                                    document.getElementById('nameError').innerHTML = 'Veuillez saisir votre nom.';
                                                 
                                                 if(email == '')
-                                                    document.getElementById('emailError').innerHTML = 'Debes ingresar un email';
+                                                    document.getElementById('emailError').innerHTML = 'Veuillez saisir votre email.';
                                                 
                                                 if(subject == '')
-                                                    document.getElementById('subjectError').innerHTML = 'Debes ingresar un titulo';
+                                                    document.getElementById('subjectError').innerHTML = 'Veuillez saisir votre sujet.';
                                                 
                                                 if(message == '')
-                                                    document.getElementById('messageError').innerHTML = 'Debes ingresar un mensaje';
+                                                    document.getElementById('messageError').innerHTML = 'Veuillez saisir votre message.';
                                                 
                                                 return false;
                                             }else{
@@ -230,7 +230,7 @@
 
                     <div class="col-md-8">
                          <div class="map-area">
-                            <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Mis redes</h2>
+                            <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Réseaux sociaux</h2>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="address wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
@@ -278,15 +278,13 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block">
-                            <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">QUE TE PARECE ?</h1>
+                            <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">QU'EN PENSES-TU ?</h1>
                             <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">
-                                Estoy super atento a cualquier sugerencia que tengas, <br>
-                                si me tienes alguna propuesta o si me quires invitar algo :)
+                                Je suis attentif à vos suggestions, <br>
+                                si vous avez une proposition ou si vous voulez m'inviter un café :)
                             </p>
-                            <a href="contact.html" class="btn btn-default btn-contact wow fadeInDown" data-wow-delay=".7s" data-wow-duration="500ms">Contáctame</a>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </section> <!--/#Contacto-->
