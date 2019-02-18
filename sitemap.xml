@@ -9,28 +9,68 @@
 
 <url>
   <loc>https://ealejandroh.com/</loc>
-  <lastmod>2019-02-08T21:21:04+00:00</lastmod>
+  <lastmod>2019-02-12T19:41:16+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://ealejandroh.com/index.html</loc>
-  <lastmod>2019-02-08T21:21:04+00:00</lastmod>
+  <lastmod>2019-02-12T19:41:16+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ealejandroh.com/about.html</loc>
-  <lastmod>2019-02-08T21:21:04+00:00</lastmod>
+  <lastmod>2019-02-12T19:41:16+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ealejandroh.com/gallery.html</loc>
-  <lastmod>2019-02-08T21:21:04+00:00</lastmod>
+  <lastmod>2019-02-12T19:41:16+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://ealejandroh.com/contact.html</loc>
-  <lastmod>2019-02-08T21:21:04+00:00</lastmod>
+  <lastmod>2019-02-12T19:41:16+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ealejandroh.com/en/about.html</loc>
+  <lastmod>2019-02-12T19:41:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ealejandroh.com/fr/about.html</loc>
+  <lastmod>2019-02-12T19:41:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ealejandroh.com/en/gallery.html</loc>
+  <lastmod>2019-02-12T19:41:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ealejandroh.com/fr/gallery.html</loc>
+  <lastmod>2019-02-12T19:41:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ealejandroh.com/en/contact.html</loc>
+  <lastmod>2019-02-12T19:41:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ealejandroh.com/fr/contact.html</loc>
+  <lastmod>2019-02-12T19:41:16+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://ealejandroh.com/en/index.html</loc>
+  <lastmod>2019-02-12T19:41:16+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://ealejandroh.com/fr/index.html</loc>
+  <lastmod>2019-02-12T19:41:16+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 

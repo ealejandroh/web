@@ -1106,3 +1106,32 @@ article {
 .idioma-ico{
   font-size: 1.5em;
 }
+
+.img-portafolio{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.meta-portafolio{
+  font-size: 0.9em;
+  color: #666;
+}
+
+
+.filtros-activos > .filtro{
+  margin-right: 8px;
+  color: #066094;
+  font-size: 0.8em;
+}
+
+.titulo-portafolio{
+  color: #066094;
+}
+
+.tecs-portafolio{
+  margin-top: 5px;
+}
+
+.no-img-portafolio{
+  margin-top: -30px;
+}
