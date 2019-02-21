@@ -1135,3 +1135,7 @@ article {
 .no-img-portafolio{
   margin-top: -30px;
 }
+
+.navbar-tamano{
+  max-height: 100% !important;
+}
