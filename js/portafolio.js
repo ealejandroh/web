@@ -1,7 +1,19 @@
+const FILTRO_CLIENTES =    {"es": "Cliente: ", 
+                            "en": "Client: ", 
+                            "fr": "Client: "};
+const FILTRO_TECNOLOGIA =  {"es": "Tecnología: ", 
+                            "en": "Technology: ", 
+                            "fr": "La technologie: "};
+
 function getData(){
 
-    let TEC_JAVA = "Java";
-    let TEC_ANGULAR = "Angular";
+
+    let TEC_JAVA = {"es": "Java", 
+                    "en": "Java", 
+                    "fr": "Java"};
+    let TEC_ANGULAR =  {"es": "Angular",
+                        "en": "Angular",
+                        "fr": "Angular"};
     let TEC_MICROSERVICIOS = "Microservicios";
     let TEC_SPRING = "Spring";
     let TEC_PRIMEFACES = "PrimeFaces";
@@ -19,7 +31,9 @@ function getData(){
     let TEC_WORKFLOW = "IBM WorkFlow";
 
 
-    let CLI_PERSONAL = "Personal";
+    let CLI_PERSONAL = {"es": "Personal", 
+                        "en": "Personal", 
+                        "fr": "Personnel"};
     let CLI_COLFONDOS = "Colfondos";
     let CLI_SERVITEL = "Servitel";
     let CLI_COLPATRIA = "Colpatria";
@@ -43,9 +57,13 @@ function getData(){
     
     let portafolios = [
         {
-            "titulo": "TuImpuesto",
+            "titulo":  {"es": "TuImpuesto", 
+                        "en": "TuImpuesto", 
+                        "fr": "TuImpuesto"},
             "fecha": "Junio, 2014",
-            "descripcion": "Realicé la puesta en producción de TuImpuesto.com, desde el nacimiento de la idea, plan de negocio, buscar inversión, desarrollo y maduración de la idea. Esta es una herramienta web para simplificar la forma de preparar impuestos, desde la persona natural que no conoce sobre temas contables ni financieros, hasta los contadores ofreciendo herramientas para mejorar su productividad.",
+            "descripcion": {"es": "Realicé la puesta en producción de TuImpuesto.com, desde el nacimiento de la idea, plan de negocio, buscar inversión, desarrollo y maduración de la idea. Esta es una herramienta web para simplificar la forma de preparar impuestos, desde la persona natural que no conoce sobre temas contables ni financieros, hasta los contadores ofreciendo herramientas para mejorar su productividad.", 
+                            "en": "Realicé la puesta en producción de TuImpuesto.com, desde el nacimiento de la idea, plan de negocio, buscar inversión, desarrollo y maduración de la idea. Esta es una herramienta web para simplificar la forma de preparar impuestos, desde la persona natural que no conoce sobre temas contables ni financieros, hasta los contadores ofreciendo herramientas para mejorar su productividad.", 
+                            "fr": "Realicé la puesta en producción de TuImpuesto.com, desde el nacimiento de la idea, plan de negocio, buscar inversión, desarrollo y maduración de la idea. Esta es una herramienta web para simplificar la forma de preparar impuestos, desde la persona natural que no conoce sobre temas contables ni financieros, hasta los contadores ofreciendo herramientas para mejorar su productividad."},
             "cliente": CLI_PERSONAL,
             "tecnologia": [TEC_JAVA, TEC_ANGULAR],
             "pagina": "http://softone.com.co/",
@@ -383,6 +401,7 @@ function getData(){
 
 function getClientes(portafolios){
 
+    let language = getLanguage();
     let clientesAux = [];
 
     let container = document.getElementById("clientes-container");
@@ -390,12 +409,22 @@ function getClientes(portafolios){
 
     for(let portafolio of portafolios){
         
-        if(clientesAux.indexOf(portafolio.cliente) == -1){
-            clientesAux.push(portafolio.cliente);
+        let clienteLg = portafolio.cliente[language] == null ? portafolio.cliente : portafolio.cliente[language];
 
-            let num = portafolios.filter(p => p.cliente === portafolio.cliente).length;        
+        if(clientesAux.indexOf(clienteLg) == -1){
+            clientesAux.push(clienteLg);
+
+            let num = portafolios.filter(p => {
+                const clienteInternoLg = p.cliente[language] == null ? p.cliente : p.cliente[language];
+                if(clienteInternoLg === clienteLg){
+                    return true;
+                }else{
+                    return false;
+                }
+            }).length;  
+
             let li = document.createElement("li");
-            li.innerHTML = `<a href='' onclick='return filtroXCliente("${portafolio.cliente}")'>${portafolio.cliente}</a> <span class='badge'>${num}</span>`;
+            li.innerHTML = `<a href='' onclick='return filtroXCliente("${clienteLg}")'>${clienteLg}</a> <span class='badge'>${num}</span>`;
             container.appendChild(li);
 
         }
@@ -406,6 +435,7 @@ function getClientes(portafolios){
 
 function getTecnologias(portafolios){
 
+    let language = getLanguage();
     let tecnologiasAux = [];
     
     let container = document.getElementById("tecnologia-container");
@@ -415,16 +445,24 @@ function getTecnologias(portafolios){
 
         for(let tecnologia of portafolio.tecnologia){
 
-            if(tecnologiasAux.indexOf(tecnologia) == -1){
-                tecnologiasAux.push(tecnologia);
+            let tecnologiaLg = tecnologia[language] == null ? tecnologia : tecnologia[language];
+            if(tecnologiasAux.indexOf(tecnologiaLg) == -1){
+                tecnologiasAux.push(tecnologiaLg);
     
                 let num = 0;
                 for(let portafolioCount of portafolios){
-                    num = num + portafolioCount.tecnologia.filter(t => t === tecnologia).length;
+                    num = num + portafolioCount.tecnologia.filter(t => {
+                        const tecnologiaInternoLg = t[language] == null ? t : t[language];
+                        if(tecnologiaInternoLg === tecnologiaLg){
+                            return true;
+                        }else{
+                            return false;
+                        }
+                    }).length;
                 }
                 
                 let li = document.createElement("li");
-                li.innerHTML = `<a href='' onclick='return filtroXTecnologia("${tecnologia}")'>${tecnologia}</a> <span class='badge'>${num}</span>`;
+                li.innerHTML = `<a href='' onclick='return filtroXTecnologia("${tecnologiaLg}")'>${tecnologiaLg}</a> <span class='badge'>${num}</span>`;
                 container.appendChild(li);
     
             }
@@ -437,6 +475,8 @@ function getTecnologias(portafolios){
 
 function getTrabajos(portafolios, filtro){
 
+
+    let language = getLanguage();
     let filtros = '';    
     if(filtro){
         filtros = `<div class="col-sm-8 col-xs-8">
@@ -452,21 +492,27 @@ function getTrabajos(portafolios, filtro){
     let indexRow = 0;
     for(let portafolio of portafolios){
 
-        let titulo = `<h4 class='titulo-portafolio'>${portafolio.titulo}</h4>`;
+        const tituloLg = portafolio.titulo[language] == null ? portafolio.titulo : portafolio.titulo[language];
+        const imagenLg = portafolio.imagen[language] == null ? portafolio.imagen : portafolio.imagen[language];
+        const clienteLg = portafolio.cliente[language] == null ? portafolio.cliente : portafolio.cliente[language];
+        const descripcionLg = portafolio.descripcion[language] == null ? portafolio.descripcion : portafolio.descripcion[language];
+
+        let titulo = `<h4 class='titulo-portafolio'>${tituloLg}</h4>`;
         if(portafolio.pagina != ''){
-            titulo = `<h4><a href="${portafolio.pagina}" target="_blank">${portafolio.titulo}</a></h4>`
+            titulo = `<h4><a href="${portafolio.pagina}" target="_blank">${tituloLg}</a></h4>`
         }
 
         let imagen = '<div class="no-img-portafolio"></div>';
         if(portafolio.imagen != ''){
             imagen = `<div class="img-wrapper img-portafolio">
-                        <img src="${portafolio.imagen}" class="img-responsive" alt="${portafolio.cliente}" />
+                        <img src="${imagenLg}" class="img-responsive" alt="${clienteLg}" />
                     </div>`
         }
 
         let tecText = ``;
         for(let tec of portafolio.tecnologia){
-            tecText = tecText + ` <span><a href='' onclick='return filtroXTecnologia("${tec}")'>${tec}</a> |</span>`;
+            let tecLg = tec[language] == null ? tec : tec[language];
+            tecText = tecText + ` <span><a href='' onclick='return filtroXTecnologia("${tecLg}")'>${tecLg}</a> |</span>`;
         }
         
         if(indexRow%2 == 0){
@@ -479,12 +525,12 @@ function getTrabajos(portafolios, filtro){
                                 ${titulo}
                                 <div class="blog-meta meta-portafolio">
                                     <span>${portafolio.fecha}</span>
-                                    <span><a href='' onclick='return filtroXCliente("${portafolio.cliente}")'>${portafolio.cliente}</a></span>
+                                    <span><a href='' onclick='return filtroXCliente("${clienteLg}")'>${clienteLg}</a></span>
                                 </div>
                             </figcaption>
                             ${imagen}
                             <figcaption>
-                                <p>${portafolio.descripcion}</p>
+                                <p>${descripcionLg}</p>
                                 <div class="blog-meta meta-portafolio tecs-portafolio">
                                     ${tecText}
                                 </div>
@@ -510,10 +556,20 @@ function getTrabajos(portafolios, filtro){
 
 function filtroXCliente(cliente){
 
+    let language = getLanguage();
     let portafolios = getData();
-    let portafoliosFiltrado = portafolios.filter(p => p.cliente === cliente);
+    let portafoliosFiltrado = portafolios.filter(p => {
+        const clienteLg = p.cliente[language] == null ? p.cliente : p.cliente[language];
+        if(clienteLg === cliente){
+            return true;
+        }else{
+            return false;
+        }
+    });
 
-    let filtro = 'Cliente: '+cliente;
+    const CLIENTE_LG = FILTRO_CLIENTES[language] == null ? FILTRO_CLIENTES : FILTRO_CLIENTES[language];
+
+    let filtro = CLIENTE_LG + cliente;
 
     getClientes(portafoliosFiltrado);
     getTecnologias(portafoliosFiltrado);
@@ -531,14 +587,58 @@ function filtroXTecnologia(tecnologia){
         getClientes(portafolios);
         getTecnologias(portafolios);
     }else{
-        let filtro = 'Tecnologia: '+tecnologia;
-        let portafoliosFiltrado = portafolios.filter(p => p.tecnologia.indexOf(tecnologia) != -1 );
+        let language = getLanguage();
+        const TECNOLOGIA_LG = FILTRO_TECNOLOGIA[language] == null ? FILTRO_TECNOLOGIA : FILTRO_TECNOLOGIA[language];
+
+        let filtro = TECNOLOGIA_LG + tecnologia;
+        let portafoliosFiltrado = portafolios.filter(p => {
+            
+            let tecnologiaFiltrado = p.tecnologia.filter(t => {
+                const tLg = t[language] == null ? t : t[language];
+                if(tLg === tecnologia){
+                    return true;
+                }else{
+                    return false;
+                }
+            });
+            
+            if(tecnologiaFiltrado.length > 0){
+                tecnologiaFiltrado = tecnologiaFiltrado[0];
+            }else{
+                return false;
+            }
+            
+            let tecAuxLg = tecnologiaFiltrado[language] == null ? tecnologiaFiltrado : tecnologiaFiltrado[language];
+
+            if(tecAuxLg.indexOf(tecnologia) != -1){
+                return true;
+            }else{
+                return false;
+            }
+        });
         getTrabajos(portafoliosFiltrado, filtro);
         getClientes(portafoliosFiltrado);
         getTecnologias(portafoliosFiltrado);
     }
 
     return false;
+}
+
+function getLanguage(){
+
+    let language = 'es';
+    let path = window.location.pathname;
+    console.log('path: '+path);
+
+    if(path.indexOf('/en/') != -1){
+        language = 'en';
+    }else if(path.indexOf('/fr/') != -1){
+        language = 'fr';
+    }
+
+    console.log('language: '+language);
+
+    return language;
 }
 
 window.onload = function() {
