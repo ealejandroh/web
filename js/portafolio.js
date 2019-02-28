@@ -29,6 +29,9 @@ function getData(){
     let TEC_PORTAL = "Portal";
     let TEC_CONSULTORIA = "Consultoría";
     let TEC_WORKFLOW = "IBM WorkFlow";
+    let TEC_WORDPRESS = "Wordpress";
+    let TEC_VAADIN = "Vaadin";
+    let TEC_WCM = "WebContent Management";
 
 
     let CLI_PERSONAL = {"es": "Personal", 
@@ -53,9 +56,177 @@ function getData(){
     let CLI_LIBERTY = "Seguros Liberty";
     let CLI_JAO = "Centro médico JAO";
     let CLI_BANCO_REPUBLICA = "Banco de la República";
+    let CLI_CLAZLOOP = "Clazloop";
+    let CLI_CORREDOR_SEGURA = "Corredor Segura abogados";
+    let CLI_OLD_MUTUAL = "Old Mutual";
+    let CLI_BLANCO_CASTRO = "Blanco de Castro";
+    let CLI_SEGUROS_AFA = "Seguros ALFA";
+    let CLI_REDEBAN = "Redeban";
 
     
     let portafolios = [
+        {
+            "titulo": "Estratech",
+            "fecha": "Noviembre, 2016",
+            "descripcion": "Participe en la definición del producto Estratech el cual busca desarrollar estrategias de ventas para micro y pequeñas empresas apoyados de herramientas tecnológicas, de la mano de una consultoría personalizada para cada cliente putual.",
+            "cliente": CLI_PERSONAL,
+            "tecnologia": [TEC_ARQUITECTURA, TEC_WORDPRESS],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Simulador sucesoral",
+            "fecha": "Noviembre, 2018",
+            "descripcion": "Realicé la definición técnica y participé en el desarrollo del simulador sucesoral de Old Mutual el cual permite la simulación de posibles escenarios del futuro de los bienes de una persona después de su fallecimiento, ya sea por herencia o por términos legales colombianos.",
+            "cliente": CLI_OLD_MUTUAL,
+            "tecnologia": [TEC_ANGULAR, TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Simulador mi retiro",
+            "fecha": "Noviembre, 2018",
+            "descripcion": "Realicé el desarrollo del simulador mi retiro, el cual permite la simulación del valor de la pensión de los afiliados a Old Mutual y una proyección de ahorro de acuerdo con un valor deseado de pensión en una edad deseada de pensión.",
+            "cliente": CLI_OLD_MUTUAL,
+            "tecnologia": [TEC_ANGULAR, TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Simulador tributario",
+            "fecha": "Septiembre, 2018",
+            "descripcion": "Realicé la definición de la arquitectura y participé en el desarrollo del simulador tributario de Old Mutual, el cual fue desarrollado sobre Angular 6 como un script portlet para IBM WebSphere Portal. Esta funcionalidad permite la creación de diferentes simuladores para la compañía de acuerdo con una configuración inicial.",
+            "cliente": CLI_OLD_MUTUAL,
+            "tecnologia": [TEC_ANGULAR, TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Consultoría comunicación portlets",
+            "fecha": "Julio, 2018",
+            "descripcion": "Realicé la consultoría para la comunicación de portlets de diferentes tecnologías en IBM WebSphere Portal, la cual incluía una prueba de concepto y definición de estándares de desarrollo para la comunicación y envió de datos entre portlets en páginas diferentes o en la misma página.",
+            "cliente": CLI_OLD_MUTUAL,
+            "tecnologia": [TEC_ARQUITECTURA, TEC_ANGULAR, TEC_VAADIN, TEC_PRIMEFACES, TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Beneficiarios microseguros",
+            "fecha": "Junio, 2018",
+            "descripcion": "Realicé la definición técnica del portlet de Asignación de beneficiarios para las pólizas de microseguros, el cual fue desarrollado con primefaces para el portal Daviplata en IBM WebSphere Portal.",
+            "cliente": CLI_DAVIVIENDA,
+            "tecnologia": [TEC_PRIMEFACES, TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Journey de inversiones",
+            "fecha": "Junio, 2018",
+            "descripcion": "Realicé la definición técnica del portlet de Journey de inversiones para Old Mutual, el cual fue desarrollado con el framework Vaadin para IBM WebSphere Portal. Este servía para que los usuario se cambiaran de portafolio de inversión con una llave de seguridad que se envía al celular como mensaje de texto.",
+            "cliente": CLI_OLD_MUTUAL,
+            "tecnologia": [TEC_VAADIN, TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Menú contextual",
+            "fecha": "Junio, 2018",
+            "descripcion": "Realicé la definición técnica y el desarrollo del script portlet menú contextual en Angular 5, el cual construye un menú dinámico dependiendo el rol del usuario autenticado y la funcionalidad activa en la que el usuario está ubicado.",
+            "cliente": CLI_OLD_MUTUAL,
+            "tecnologia": [TEC_ANGULAR, TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Certificado pólizas de microseguros",
+            "fecha": "Febrero, 2018",
+            "descripcion": "Realicé el desarrollo del portlet de consulta de certificados de pólizas de microseguros de Daviplata para Davivienda, el cual se fue desarrollado en primefaces para un portal en IBM WebSphere Portal.",
+            "cliente": CLI_DAVIVIENDA,
+            "tecnologia": [TEC_PRIMEFACES, TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Portal Asesoría",
+            "fecha": "Enero, 2018",
+            "descripcion": "Participe en la definición técnica y desarrollo del portal de asesoría de Old Mutual el cual, incluida el desarrollo de un tema para la navegación, portlets de contenido en WebContent Management, script portlets en Angular y portlets de seguridad en primefaces.",
+            "cliente": CLI_OLD_MUTUAL,
+            "tecnologia": [TEC_PORTAL, TEC_WCM, TEC_PORTLET, TEC_ANGULAR],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Modal Navegadores",
+            "fecha": "Diciembre, 2017",
+            "descripcion": "Realicé el desarrollo de un portlet en Vaadin para IBM WebSphere Portal para Old Mutual, que identifica el navegador del usuario y permite la navegación de funcionalidades dependiendo el soporte del navegador para dichas funcionalidades.",
+            "cliente": CLI_OLD_MUTUAL,
+            "tecnologia": [TEC_VAADIN,  TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Informes Dinámicos Pipeline",
+            "fecha": "Agosto, 2017",
+            "descripcion": "Realicé el diseño de la arquitectura del proyecto, y participé en el desarrollo del sistema de Informes de Pipeline para Old Mutual en Vaadin, el cual es un sistema que permite la configuración de informes dinámicos de ventas de la compañía.",
+            "cliente": CLI_OLD_MUTUAL,
+            "tecnologia": [TEC_VAADIN,  TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Botón de Pagos Redeban",
+            "fecha": "Marzo, 2017",
+            "descripcion": "Realicé el diseño de la arquitectura del proyecto del botón de pagos de Redeban, y lideré el equipo de desarrollo. El objetivo era construir plataforma sobre WebSphere Portal, donde los comercios diseñan su propio botón de pagos asociado a un de un producto, lo pueden incluir en sus páginas y generar estadísticas de sus ventas.",
+            "cliente": CLI_REDEBAN,
+            "tecnologia": [TEC_VAADIN,  TEC_PORTLET, TEC_PORTAL],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Llamado a Capital",
+            "fecha": "Mayo, 2017",
+            "descripcion": "Realicé el diseño técnico y lideré el equipo de desarrollo del proyecto Llamado Capital de Old Mutual, el cual ayuda con la administración y gestión del proceso para el recaudo de capital de los fondos de inversión. ",
+            "cliente": CLI_OLD_MUTUAL,
+            "tecnologia": [TEC_VAADIN,  TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Arquitectura Portal",
+            "fecha": "Junio, 2017",
+            "descripcion": "Realicé la definición de la arquitectura de un nuevo portal empresarial de Seguros Alfa y lideré al equipo de desarrollo en la migración de este a una plataforma más moderna y que permita su crecimiento tecnológico de acuerdo a sus necesidades de negocio.",
+            "cliente": CLI_SEGUROS_AFA,
+            "tecnologia": [TEC_ARQUITECTURA],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Asesoría Blanco de Castro",
+            "fecha": "Febrero, 2017",
+            "descripcion": "Fui asesor técnico y consultor de su área de tecnología para el crecimiento tecnológico de la compañía Blanco de Castro, en donde modernicé su infraestructura tecnológica de acuerdo a sus necesidades de negocio y actualicé su imagen web enfocado en el incremento de las ventas.",
+            "cliente": CLI_BLANCO_CASTRO,
+            "tecnologia": [TEC_WORDPRESS],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Simulador Pensional",
+            "fecha": "Abril, 2017",
+            "descripcion": "Realicé el diseño técnico y lideré el equipo de desarrollo del simulador de pensiones de Old Mutual, el cual era un requisito de ley y se debía ajustan al tiempo y requisitos puestos por la super financiera.",
+            "cliente": CLI_OLD_MUTUAL,
+            "tecnologia": [TEC_VAADIN, TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Asesoría Corredor Segura",
+            "fecha": "Septiembre, 2016",
+            "descripcion": "Fui asesor técnico en la compañía Corredor Segura Abogados, en donde modernicé su sitio web y planteé un plan de crecimiento tecnológico para la compañía de acuerdo a las necesidades de la compañía y requerimientos de sus clientes. ",
+            "cliente": CLI_CORREDOR_SEGURA,
+            "tecnologia": [TEC_WORDPRESS],
+            "pagina": "",
+            "imagen": ""
+        },
         {
             "titulo":  {"es": "TuImpuesto", 
                         "en": "TuImpuesto", 
@@ -67,6 +238,15 @@ function getData(){
             "cliente": CLI_PERSONAL,
             "tecnologia": [TEC_JAVA, TEC_ANGULAR],
             "pagina": "http://softone.com.co/",
+            "imagen": ""
+        },
+        {
+            "titulo": "Plataforma e-learning",
+            "fecha": "Marzo, 2015",
+            "descripcion": "Lideré el área de tecnología de la empresa Clazloop S.A.S. la cual es una solución de e-learning, que contempla una plataforma web y una plataforma móvil para su funcionamiento.",
+            "cliente": CLI_CLAZLOOP,
+            "tecnologia": [TEC_PRIMEFACES, TEC_MICROSERVICIOS],
+            "pagina": "",
             "imagen": ""
         },
         {
