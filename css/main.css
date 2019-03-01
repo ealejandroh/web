@@ -1139,3 +1139,8 @@ article {
 .navbar-tamano{
   max-height: 100% !important;
 }
+
+.filtrosInicio{
+  font-size: 1.2em;
+  line-height: 25px;
+}
