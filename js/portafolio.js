@@ -1,9 +1,13 @@
-const FILTRO_CLIENTES =    {"es": "Cliente: ", 
-                            "en": "Client: ", 
-                            "fr": "Client: "};
+const FILTRO_CLIENTES =    {"es": "Filtro: ", 
+                            "en": "Filter: ", 
+                            "fr": "Filtrer: "};
 const FILTRO_TECNOLOGIA =  {"es": "Tecnología: ", 
                             "en": "Technology: ", 
                             "fr": "La technologie: "};
+
+const CLI_PERSONAL = {"es": "Personal", 
+                        "en": "Personal", 
+                        "fr": "Personnel"};
 
 function getData(){
 
@@ -34,9 +38,6 @@ function getData(){
     let TEC_WCM = "WebContent Management";
 
 
-    let CLI_PERSONAL = {"es": "Personal", 
-                        "en": "Personal", 
-                        "fr": "Personnel"};
     let CLI_COLFONDOS = "Colfondos";
     let CLI_SERVITEL = "Servitel";
     let CLI_COLPATRIA = "Colpatria";
@@ -580,7 +581,7 @@ function getData(){
 }
 
 function getClientes(portafolios){
-
+    /*
     let language = getLanguage();
     let clientesAux = [];
 
@@ -603,10 +604,49 @@ function getClientes(portafolios){
                 }
             }).length;  
 
-            let li = document.createElement("li");
-            li.innerHTML = `<a href='' onclick='return filtroXCliente("${clienteLg}")'>${clienteLg}</a> <span class='badge'>${num}</span>`;
-            container.appendChild(li);
+            if(num > 0){
+                let li = document.createElement("li");
+                li.innerHTML = `<a href='' onclick='return filtroXCliente("${clienteLg}")'>${clienteLg}</a> <span class='badge'>${num}</span>`;
+                container.appendChild(li);
+            }
+            
+        }
+        
+    }
+    */
 
+}
+
+function getPersonales(portafolios){
+
+    let language = getLanguage();
+    let clientesAux = [];
+
+    let container = document.getElementById("personales-container");
+    container.innerHTML = '';
+
+    for(let portafolio of portafolios){
+        
+        let clienteLg = portafolio.cliente[language] == null ? portafolio.cliente : portafolio.cliente[language];
+
+        if(clientesAux.indexOf(clienteLg) == -1){
+            clientesAux.push(clienteLg);
+
+            let num = portafolios.filter(p => {
+                const clienteInternoLg = p.cliente[language] == null ? p.cliente : p.cliente[language];
+                if(clienteInternoLg === clienteLg){
+                    return true;
+                }else{
+                    return false;
+                }
+            }).length;  
+
+            if(clienteLg == 'Personal' || clienteLg == 'Personnel'){
+                let li = document.createElement("li");
+                li.innerHTML = `<a href='' onclick='return filtroXCliente("${clienteLg}")'>${clienteLg}</a> <span class='badge'>${num}</span>`;
+                container.appendChild(li);
+            }
+            
         }
         
     }
@@ -641,16 +681,76 @@ function getTecnologias(portafolios){
                     }).length;
                 }
                 
-                let li = document.createElement("li");
+                if(num > 0){
+                    let li = document.createElement("li");
                 li.innerHTML = `<a href='' onclick='return filtroXTecnologia("${tecnologiaLg}")'>${tecnologiaLg}</a> <span class='badge'>${num}</span>`;
                 container.appendChild(li);
-    
+                }
+                
             }
 
         }
 
     }
 
+}
+
+function getFiltrosInicio(portafolios){
+
+    try{
+
+        let language = getLanguage();
+        let tecnologiasAux = [];
+        
+        let container = document.getElementById("filtrosInicio-container");
+        container.innerHTML = '';
+
+        let filtrosHtml = `<h3 class="filtros-activos filtrosInicio">`;
+
+        filtrosHtml = filtrosHtml + `<a href='' onclick='return filtroXCliente("${CLI_PERSONAL[language]}")'>${CLI_PERSONAL[language]} (3)</a> - `;
+
+        
+        for(let portafolio of portafolios){
+
+            for(let tecnologia of portafolio.tecnologia){
+
+                let tecnologiaLg = tecnologia[language] == null ? tecnologia : tecnologia[language];
+                if(tecnologiasAux.indexOf(tecnologiaLg) == -1){
+                    tecnologiasAux.push(tecnologiaLg);
+        
+                    let num = 0;
+                    for(let portafolioCount of portafolios){
+                        num = num + portafolioCount.tecnologia.filter(t => {
+                            const tecnologiaInternoLg = t[language] == null ? t : t[language];
+                            if(tecnologiaInternoLg === tecnologiaLg){
+                                return true;
+                            }else{
+                                return false;
+                            }
+                        }).length;
+                    }
+                    
+                    
+
+                    if(num > 0){
+                        filtrosHtml = filtrosHtml + `<a href='' onclick='return filtroXTecnologia("${tecnologiaLg}")'>${tecnologiaLg} (${num})</a> - `;
+                    }
+                    
+                }
+
+            }
+
+        }
+
+        filtrosHtml = filtrosHtml.substring(0, filtrosHtml.length - 3);
+        filtrosHtml = filtrosHtml + `</h3><br/>`;
+
+        container.innerHTML = filtrosHtml;
+        
+    }catch(error){
+        console.log('NO hay contenedor inicial');
+    }
+    
 }
 
 function getTrabajos(portafolios, filtro){
@@ -751,9 +851,18 @@ function filtroXCliente(cliente){
 
     let filtro = CLIENTE_LG + cliente;
 
+    getTrabajos(portafoliosFiltrado, filtro);
+
+    /*
     getClientes(portafoliosFiltrado);
     getTecnologias(portafoliosFiltrado);
-    getTrabajos(portafoliosFiltrado, filtro);
+    getPersonales(portafoliosFiltrado);
+    */
+    
+    getClientes(portafolios);
+    getTecnologias(portafolios);
+    getPersonales(portafolios);
+    getFiltrosInicio(portafolios);
 
     return false;
 }
@@ -766,6 +875,8 @@ function filtroXTecnologia(tecnologia){
         getTrabajos(portafolios, null);
         getClientes(portafolios);
         getTecnologias(portafolios);
+        getPersonales(portafolios);
+        getFiltrosInicio(portafolios);
     }else{
         let language = getLanguage();
         const TECNOLOGIA_LG = FILTRO_TECNOLOGIA[language] == null ? FILTRO_TECNOLOGIA : FILTRO_TECNOLOGIA[language];
@@ -796,9 +907,20 @@ function filtroXTecnologia(tecnologia){
                 return false;
             }
         });
+
         getTrabajos(portafoliosFiltrado, filtro);
+
+        /*
         getClientes(portafoliosFiltrado);
         getTecnologias(portafoliosFiltrado);
+        getPersonales(portafoliosFiltrado);
+        */
+        
+        getClientes(portafolios);
+        getTecnologias(portafolios);
+        getPersonales(portafolios);
+        getFiltrosInicio(portafolios);
+
     }
 
     return false;
@@ -826,4 +948,6 @@ window.onload = function() {
     getClientes(portafolios);
     getTecnologias(portafolios);
     getTrabajos(portafolios);
+    getPersonales(portafolios);
+    getFiltrosInicio(portafolios);
 };
