@@ -11,14 +11,9 @@ const CLI_PERSONAL = {"es": "Personal",
 
 function getData(){
 
-
-    let TEC_JAVA = {"es": "Java", 
-                    "en": "Java", 
-                    "fr": "Java"};
-    let TEC_ANGULAR =  {"es": "Angular",
-                        "en": "Angular",
-                        "fr": "Angular"};
-    let TEC_MICROSERVICIOS = "Microservicios";
+    let TEC_JAVA = "Java";
+    let TEC_ANGULAR = "Angular";
+    let TEC_MICROSERVICIOS = {"es": "Microservicios", "en": "Microservices", "fr": "Microservices"};
     let TEC_SPRING = "Spring";
     let TEC_PRIMEFACES = "PrimeFaces";
     let TEC_RICHFACES = "RichFaces";
@@ -26,12 +21,12 @@ function getData(){
     let TEC_JSP = "Jsp";
     let TEC_MONGODB = "MongoDB";
     let TEC_PRESTASHOP = "Prestashop";
-    let TEC_ARQUITECTURA = "Arquitectura";
+    let TEC_ARQUITECTURA = {"es": "Arquitectura", "en": "Architecture", "fr": "Architecture"};
     let TEC_PORTLET = "Portlet";
     let TEC_MULE = "Mule";
-    let TEC_SOPORTE = "Soporte";
+    let TEC_SOPORTE = {"es": "Soporte", "en": "Support", "fr": "Soutien"};
     let TEC_PORTAL = "Portal";
-    let TEC_CONSULTORIA = "Consultoría";
+    let TEC_CONSULTORIA = {"es": "Consultoría", "en": "Consultancy", "fr": "Consultation"};
     let TEC_WORKFLOW = "IBM WorkFlow";
     let TEC_WORDPRESS = "Wordpress";
     let TEC_VAADIN = "Vaadin";
@@ -61,12 +56,58 @@ function getData(){
     let CLI_CLAZLOOP = "Clazloop";
     let CLI_CORREDOR_SEGURA = "Corredor Segura abogados";
     let CLI_OLD_MUTUAL = "Old Mutual";
+    let CLI_SKANDIA = "Skandia";
     let CLI_BLANCO_CASTRO = "Blanco de Castro";
     let CLI_SEGUROS_AFA = "Seguros ALFA";
     let CLI_REDEBAN = "Redeban";
     let CLI_SOFTONE = "SoftOne";
     
     let portafolios = [
+        {
+            "titulo": "Consultoría WebSphere Portal",
+            "fecha": {"es": "Julio, 2019", "en": "July, 2019", "fr": "Juillet, 2019"},
+            "descripcion": "Estuve apoyando al equipo técnico de Skandia en la solución de problemas internos sobre el portal empresarial en WebSphere Portal y la definición de nuevas soluciones internas.",
+            "cliente": CLI_SKANDIA,
+            "tecnologia": [TEC_CONSULTORIA, TEC_PORTAL],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Event sports",
+            "fecha": {"es": "Junio, 2019", "en": "June, 2019", "fr": "Juin, 2019"},
+            "descripcion": "Participé en la definición de la idea de SportEvents, desarrollo del producto, puesta en producción y maduración de la marca; SportEvents funciona para soportar la gestión de inscripciones a eventos deportivos.",
+            "cliente": CLI_PERSONAL,
+            "tecnologia": [TEC_MICROSERVICIOS, TEC_ANGULAR, TEC_MONGODB],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Cambio de Marca",
+            "fecha": {"es": "Mayo, 2019", "en": "May, 2019", "fr": "Mai, 2019"},
+            "descripcion": "Participé en el desarrollo del cambio de marca de Old Mutual hacia Skandia de las aplicaciones: simulador tributario, simulador mi retiro, simulador sucesoral, simulador pensional y tema de asesoría.",
+            "cliente": CLI_SKANDIA,
+            "tecnologia": [TEC_PORTAL, TEC_WCM],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Tema personalización",
+            "fecha": {"es": "Abril, 2019", "en": "April, 2019", "fr": "Avril, 2019"},
+            "descripcion": "Realicé en el diseño técnico del desarrollo del tema de personalización para el fondo de pensiones Skandia sobre IBM WebSphere Portal, para que soporte un crecimiento de información y funcionalidades de manera dinámica por medio de configuraciones por parte del usuario.",
+            "cliente": CLI_SKANDIA,
+            "tecnologia": [TEC_PORTAL, TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": "Informes derivados",
+            "fecha": {"es": "Marzo, 2019", "en": "March, 2019", "fr": "Mars, 2019"},
+            "descripcion": "Realicé el diseño y desarrollo de las modificaciones de la aplicación de informes derivados para Colfondos de acuerdo con lo solicitado por la superintendencia financiera en la circular externa 036, en donde se adicionan nuevos informes y modificaciones en estructuras de los informes existentes.",
+            "cliente": CLI_COLFONDOS,
+            "tecnologia": [TEC_JAVA, TEC_SPRING],
+            "pagina": "",
+            "imagen": ""
+        },
         {
             "titulo": "Simulador sucesoral",
             "fecha": {"es": "Noviembre, 2018", "en": "November, 2018", "fr": "Novembre, 2018"},
