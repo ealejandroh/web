@@ -1144,3 +1144,12 @@ article {
   font-size: 1.2em;
   line-height: 25px;
 }
+
+.filtro > .quitar{
+  cursor: pointer;
+  margin-left: 1px;
+  font-size: 15px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 27px;
+}
