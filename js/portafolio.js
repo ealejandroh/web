@@ -11,58 +11,150 @@ const CLI_PERSONAL = {"es": "Personal",
 
 function getData(){
 
-    let TEC_JAVA = "Java";
-    let TEC_ANGULAR = "Angular";
-    let TEC_MICROSERVICIOS = {"es": "Microservicios", "en": "Microservices", "fr": "Microservices"};
-    let TEC_SPRING = "Spring";
-    let TEC_PRIMEFACES = "PrimeFaces";
-    let TEC_RICHFACES = "RichFaces";
-    let TEC_STRUTS = "Struts";
-    let TEC_JSP = "Jsp";
-    let TEC_MONGODB = "MongoDB";
-    let TEC_PRESTASHOP = "Prestashop";
-    let TEC_ARQUITECTURA = {"es": "Arquitectura", "en": "Architecture", "fr": "Architecture"};
-    let TEC_PORTLET = "Portlet";
-    let TEC_MULE = "Mule";
-    let TEC_SOPORTE = {"es": "Soporte", "en": "Support", "fr": "Soutien"};
-    let TEC_PORTAL = "Portal";
-    let TEC_CONSULTORIA = {"es": "Consultoría", "en": "Consultancy", "fr": "Consultation"};
-    let TEC_WORKFLOW = "IBM WorkFlow";
-    let TEC_WORDPRESS = "Wordpress";
-    let TEC_VAADIN = "Vaadin";
-    let TEC_WCM = "WebContent Management";
-    let TEC_ANDROID = "Android";
+    const TEC_JAVA = "Java";
+    const TEC_ANGULAR = "Angular";
+    const TEC_MICROSERVICIOS = {"es": "Microservicios", "en": "Microservices", "fr": "Microservices"};
+    const TEC_SPRING = "Spring";
+    const TEC_PRIMEFACES = "PrimeFaces";
+    const TEC_RICHFACES = "RichFaces";
+    const TEC_STRUTS = "Struts";
+    const TEC_JSP = "Jsp";
+    const TEC_MONGODB = "MongoDB";
+    const TEC_PRESTASHOP = "Prestashop";
+    const TEC_ARQUITECTURA = {"es": "Arquitectura", "en": "Architecture", "fr": "Architecture"};
+    const TEC_PORTLET = "Portlet";
+    const TEC_MULE = "Mule";
+    const TEC_SOPORTE = {"es": "Soporte", "en": "Support", "fr": "Soutien"};
+    const TEC_PORTAL = "Portal";
+    const TEC_CONSULTORIA = {"es": "Consultoría", "en": "Consultancy", "fr": "Consultation"};
+    const TEC_WORKFLOW = "IBM WorkFlow";
+    const TEC_WORDPRESS = "Wordpress";
+    const TEC_VAADIN = "Vaadin";
+    const TEC_WCM = "WebContent Management";
+    const TEC_ANDROID = "Android";
 
 
-    let CLI_COLFONDOS = "Colfondos";
-    let CLI_SERVITEL = "Servitel";
-    let CLI_COLPATRIA = "Colpatria";
-    let CLI_DAVIVIENDA = "Davivienda";
-    let CLI_ALFAGL = "AlfaGL";
-    let CLI_COMPUTEC = "Experian Computec";
-    let CLI_PRODESEG = "Prodeseg";
-    let CLI_DECEVAL = "Deceval";
-    let CLI_BAXTER = "Laboratorios Baxter";
-    let CLI_BUSSIE = "Laboratorios Bussie";
-    let CLI_CARULLA = "Carulla";
-    let CLI_GASNATURAL = "Gas Natural";
-    let CLI_VISA = "Visa";
-    let CLI_BANCO_CREDITO = "Banco de crédito";
-    let CLI_FISCALIA = "Fiscalia";
-    let CLI_DANE = "Dane";
-    let CLI_LIBERTY = "Seguros Liberty";
-    let CLI_JAO = "Centro médico JAO";
-    let CLI_BANCO_REPUBLICA = "Banco de la República";
-    let CLI_CLAZLOOP = "Clazloop";
-    let CLI_CORREDOR_SEGURA = "Corredor Segura abogados";
-    let CLI_OLD_MUTUAL = "Old Mutual";
-    let CLI_SKANDIA = "Skandia";
-    let CLI_BLANCO_CASTRO = "Blanco de Castro";
-    let CLI_SEGUROS_AFA = "Seguros ALFA";
-    let CLI_REDEBAN = "Redeban";
-    let CLI_SOFTONE = "SoftOne";
+    const CLI_COLFONDOS = "Colfondos";
+    const CLI_SERVITEL = "Servitel";
+    const CLI_COLPATRIA = "Colpatria";
+    const CLI_DAVIVIENDA = "Davivienda";
+    const CLI_ALFAGL = "AlfaGL";
+    const CLI_COMPUTEC = "Experian Computec";
+    const CLI_PRODESEG = "Prodeseg";
+    const CLI_DECEVAL = "Deceval";
+    const CLI_BAXTER = "Laboratorios Baxter";
+    const CLI_BUSSIE = "Laboratorios Bussie";
+    const CLI_CARULLA = "Carulla";
+    const CLI_GASNATURAL = "Gas Natural";
+    const CLI_VISA = "Visa";
+    const CLI_BANCO_CREDITO = "Banco de crédito";
+    const CLI_FISCALIA = "Fiscalia";
+    const CLI_DANE = "Dane";
+    const CLI_LIBERTY = "Seguros Liberty";
+    const CLI_JAO = "Centro médico JAO";
+    const CLI_BANCO_REPUBLICA = "Banco de la República";
+    const CLI_CLAZLOOP = "Clazloop";
+    const CLI_CORREDOR_SEGURA = "Corredor Segura abogados";
+    const CLI_OLD_MUTUAL = "Old Mutual";
+    const CLI_SKANDIA = "Skandia";
+    const CLI_BLANCO_CASTRO = "Blanco de Castro";
+    const CLI_SEGUROS_AFA = "Seguros ALFA";
+    const CLI_REDEBAN = "Redeban";
+    const CLI_ECOPETROL = "Ecopetrol";
+    const CLI_SOFTONE = "SoftOne";
     
     let portafolios = [
+        {
+            "titulo": { "es": "Historia laboral consolidada", 
+                        "en": "Consolidated employment history", 
+                        "fr": "Historique d'emploi consolidé" },
+            "fecha": {"es": "Enero, 2021", "en": "January, 2021", "fr": "Janvier, 2021"},
+            "descripcion": {"es": "Realicé el liderazgo técnico del desarrollo de la historia laboral consolidada de Colfondos la cual incluye la comunicación entre el portal Liferay, Mule ESB, microservicios y AS400 por medio de MQ.", 
+                            "en": "I carried out the technical leadership of the development of the consolidated work history of Colfondos which includes the communication between the Liferay portal, Mule ESB, microservices and AS400 through MQ.", 
+                            "fr": "J'ai assuré le leadership technique du développement de l'historique de travail consolidé de Colfondos qui comprend la communication entre le portail Liferay, Mule ESB, les microservices et AS400 via MQ." },
+            "cliente": CLI_COLFONDOS,
+            "tecnologia": [TEC_MICROSERVICIOS, TEC_PORTAL],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": { "es": "Cifrado de emails", 
+                        "en": "Email encryption", 
+                        "fr": "Cryptage des e-mails" },
+            "fecha": {"es": "Noviembre, 2020", "en": "November, 2020", "fr": "Novembre, 2020"},
+            "descripcion": {"es": "Realice el diseño y la prueba de concepto para el proyecto de cifrado de emails para la consulta de correos en un buzón de Office 365 de Colfondos, comprimir sus archivos adjuntos y reenvío con una clave al filiado.", 
+                            "en": "Perform the design and proof of concept for the email encryption project for consulting emails in an Office 365 Colfondos mailbox, compressing their attachments and forwarding them with a key to the affiliate.", 
+                            "fr": "Effectuer la conception et la preuve de concept du projet de chiffrement des e-mails pour consulter les e-mails dans une boîte aux lettres Office 365 Colfondos, compresser leurs pièces jointes et les transmettre avec une clé à l'affilié." },
+            "cliente": CLI_COLFONDOS,
+            "tecnologia": [TEC_CONSULTORIA],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": { "es": "Validación browser no soportado", 
+                        "en": "Browser validation not supported", 
+                        "fr": "Validation du navigateur non prise en charge" },
+            "fecha": {"es": "Agosto, 2020", "en": "August, 2020", "fr": "Août, 2020"},
+            "descripcion": {"es": "Desarrollo portlet sobre Liferay para realizar validación de browser no soportados dinámicamente de acuerdo con la funcionalidad de las páginas del portal de Colfondos.", 
+                            "en": "Development of a portlet on Liferay to perform browser validation not dynamically supported according to the functionality of the Colfondos portal pages.", 
+                            "fr": "Développement d'un portlet sur Liferay pour effectuer la validation du navigateur non pris en charge dynamiquement selon la fonctionnalité des pages du portail Colfondos." },
+            "cliente": CLI_COLFONDOS,
+            "tecnologia": [TEC_PORTAL, TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": { "es": "Adición tipo documento cesantías", 
+                        "en": "Severance document type addition", 
+                        "fr": "Ajout du type de document d'indemnité de départ" },
+            "fecha": {"es": "Julio, 2020", "en": "July, 2020", "fr": "Juillet, 2020"},
+            "descripcion": {"es": "Implementación de funcionalidad para adicionar tipo de documentos de los afiliados para el producto de cesantías en Colfondos e incluirlo en los servicios utilizados por el IVR por medio de microservicios.", 
+                            "en": "Implementation of functionality to add type of documents of the affiliates for the severance product in Colfondos and include it in the services used by the IVR through microservices.", 
+                            "fr": "Implémentation de fonctionnalités pour ajouter le type de documents des affiliés pour le produit d'indemnité de départ dans Colfondos et l'inclure dans les services utilisés par l'IVR via des microservices." },
+            "cliente": CLI_COLFONDOS,
+            "tecnologia": [TEC_MICROSERVICIOS, TEC_ARQUITECTURA],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": { "es": "Desarrollo Servicios IVR Colfondos", 
+                        "en": "IVR Services Development Colfondos", 
+                        "fr": "Développement des services IVR Colfondos" },
+            "fecha": {"es": "Febrero, 2020", "en": "February, 2020", "fr": "Février, 2020"},
+            "descripcion": {"es": "Diseñé la arquitectura para implementación de microservicios en Colfondos utilizando spring boot, la cual se comenzó a utilizar con los servicios consumidos por el IVR para la generación de documentos de los afiliados en donde se realiza alrededor de 20.000 solicitudes mensuales.", 
+                            "en": "I designed the architecture for the implementation of microservices in Colfondos using spring boot, which began to be used with the services consumed by the IVR for the generation of affiliate documents where around 20,000 monthly requests are made.", 
+                            "fr": "J'ai conçu l'architecture pour la mise en œuvre de microservices dans Colfondos à l'aide de spring boot, qui a commencé à être utilisée avec les services consommés par l'IVR pour la génération de documents d'affiliation où environ 20 000 demandes mensuelles sont effectuées." },
+            "cliente": CLI_COLFONDOS,
+            "tecnologia": [TEC_MICROSERVICIOS, TEC_ARQUITECTURA],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": { "es": "Arquitectura Contenidos Ecopetrol", 
+                        "en": "Architecture Contents Ecopetrol", 
+                        "fr": "Architecture de contenu Ecopetrol" },
+            "fecha": {"es": "Enero, 2020", "en": "January, 2020", "fr": "Janvier, 2020"},
+            "descripcion": {"es": "Diseñe la arquitectura de creación de contenidos del portal de Ecopetrol el cual se desarrollo sobre IBM WebSphere Portal, en donde migraron alrededor de 4000 páginas.", 
+                            "en": "I designed the content creation architecture of the Ecopetrol portal, which was developed on IBM WebSphere Portal, where around 4000 pages migrated.", 
+                            "fr": "J'ai conçu l'architecture de création de contenu du portail Ecopetrol, qui a été développé sur IBM WebSphere Portal, où environ 4 000 pages ont migré." },
+            "cliente": CLI_ECOPETROL,
+            "tecnologia": [TEC_CONSULTORIA, TEC_PORTAL, TEC_ARQUITECTURA],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": { "es": "Integración Plataforma Box", 
+                        "en": "Box Platform Integration", 
+                        "fr": "Intégration de la plateforme Box" },
+            "fecha": {"es": "Diciembre, 2019", "en": "December, 2019", "fr": "Décembre, 2019"},
+            "descripcion": {"es": "Realicé la integración de la plataforma Box para la administración y gestión de documentos internos sobre el Portal de Skandia en WebSphere Portal, utilizando los permisos y roles internos de la compañía.", 
+                            "en": "I made the integration of the Box platform for the administration and management of internal documents on the Skandia Portal in WebSphere Portal, using the company's internal roles and permissions.", 
+                            "fr": "J'ai réalisé l'intégration de la plateforme Box pour l'administration et la gestion des documents internes sur le portail Skandia dans WebSphere Portal, en utilisant les rôles et permissions internes de l'entreprise." },
+            "cliente": CLI_SKANDIA,
+            "tecnologia": [TEC_CONSULTORIA, TEC_PORTAL],
+            "pagina": "",
+            "imagen": ""
+        },
         {
             "titulo": { "es": "Consultoría WebSphere Portal", 
                         "en": "WebSphere Portal Consulting", 
@@ -953,7 +1045,7 @@ function getTrabajos(portafolios, filtro){
         if(filtro){
             filtros = `<div class="col-sm-8 col-xs-8">
                             <h3 class="filtros-activos">
-                                <span class="filtro">${filtro}<span class="badge" onclick='return filtroXTecnologia("")'>x</span> </span>
+                                <span class="filtro">${filtro}<span class="quitar ion-ios-close-outline" onclick='return filtroXTecnologia("")'></span> </span> 
                             </h3>
                             <br/>
                         </div>`;
