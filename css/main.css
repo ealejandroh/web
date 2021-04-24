@@ -1153,3 +1153,8 @@ article {
   position: absolute;
   bottom: 27px;
 }
+
+#feature h3 {
+  text-transform: none;
+  text-align: left;
+}
