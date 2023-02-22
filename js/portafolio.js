@@ -32,9 +32,14 @@ function getData(){
     const TEC_VAADIN = "Vaadin";
     const TEC_WCM = "WebContent Management";
     const TEC_ANDROID = "Android";
+    const TEC_NODEJS = "NodeJs";
+    const TEC_TYPESCRIPT = "Typescript";
+    const TEC_GCP = "CGP";
 
 
     const CLI_COLFONDOS = "Colfondos";
+    const CLI_ATH = "Ath";
+    const CLI_KEO = "Keo World";
     const CLI_SERVITEL = "Servitel";
     const CLI_COLPATRIA = "Colpatria";
     const CLI_DAVIVIENDA = "Davivienda";
@@ -64,6 +69,32 @@ function getData(){
     const CLI_SOFTONE = "SoftOne";
     
     let portafolios = [
+        {
+            "titulo": { "es": "BPM v3", 
+                        "en": "BPM v3", 
+                        "fr": "BPM v3" },
+            "fecha": {"es": "Enero, 2022", "en": "January, 2022", "fr": "Janvier, 2022"},
+            "descripcion": {"es": "Lideré el área de back-end y diseñé la arquitectura para la generación de productos financieros de Keo Word reduciendo el tiempo de desarrollo en un 60%. La plataforma se encuentra sobre GCP con microservicios desarrollados en NodeJs.", 
+                            "en": "I led the back-end area and designed the architecture for the generation of Keo Word financial products, reducing development time by 60%. The platform is on GCP with microservices developed in NodeJs.", 
+                            "fr": "J'ai dirigé le domaine back-end et conçu l'architecture pour la génération des produits financiers Keo Word, réduisant le temps de développement de 60%. La plateforme est sur GCP avec des microservices développés en NodeJs." },
+            "cliente": CLI_KEO,
+            "tecnologia": [TEC_GCP, TEC_NODEJS, TEC_TYPESCRIPT],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": { "es": "Liderazgo Fabrica de desarrollo", 
+                        "en": "Leadership Development Factory", 
+                        "fr": "Direction de l'usine de développement" },
+            "fecha": {"es": "Julio, 2021", "en": "July, 2021", "fr": "Juillet, 2021"},
+            "descripcion": {"es": "Liderazgo y gestión de las actividades de la fabrica de desarrollo de ATH donde se realizan desarrollos para los portales del grupo Aval (Banco de Bogotá, Banco de occidente, Banco popular y Banco Av Villas) y se da soporte al portal de producción de AvalPay Center sobre WebSphere Portal.", 
+                            "en": "Leadership and management of the activities of the ATH development factory where developments are carried out for the Aval group portals (Banco de Bogotá, Banco de Occidente, Banco popular and Banco Av Villas) and support is given to the AvalPay Center production portal about WebSphere Portal.", 
+                            "fr": "Direction et gestion des activités de l'usine de développement ATH où les développements sont réalisés pour les portails du groupe Aval (Banco de Bogotá, Banco de Occidente, Banco popular et Banco Av Villas) et le soutien est apporté au portail de production AvalPay Center sur WebSphere Portal ." },
+            "cliente": CLI_ATH,
+            "tecnologia": [TEC_JAVA, TEC_PORTAL, TEC_ANGULAR],
+            "pagina": "",
+            "imagen": ""
+        },
         {
             "titulo": { "es": "Historia laboral consolidada", 
                         "en": "Consolidated employment history", 
