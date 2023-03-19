@@ -65,7 +65,7 @@ function getData(){
     const CLI_SEGUROS_AFA = "Seguros ALFA";
     const CLI_REDEBAN = "Redeban";
     const CLI_ECOPETROL = "Ecopetrol";
-    const CLI_SOFTONE = "SoftOne";
+    const CLI_SOFTONE = "Interno";
     const CLI_PERSONAL = {"es": "Personal", 
                         "en": "Personal", 
                         "fr": "Personnel"};
@@ -670,8 +670,8 @@ function getData(){
             "descripcion": {"es": "Dirigí y participé en la implementación de Disponible, desde el nacimiento de la idea, hasta la puesta en producción. Disponible es una aplicación para Android que ayuda a buscar estilistas en tiempo real y reservar sus servicios sin la necesidad de hacer filas o esperar a ser atentado.", 
                             "en": "I directed and participated in the implementation of Available, from the birth of the idea, to the start of production. Available is an Android application that helps you find stylists in real time and book your services without the need to line up or wait for an attack.", 
                             "fr": "J'ai dirigé et participé à la mise en œuvre de Available, de la naissance de l'idée au début de la production. Available est une application Android qui vous aide à trouver des stylistes en temps réel et à réserver vos services sans avoir à vous mettre en file d'attente ou à attendre une attaque."},
-            "cliente": CLI_PERSONAL,
-            "empleador": EMP_PERSONAL,
+            "cliente": CLI_SOFTONE,
+            "empleador": EMP_SOFTONE,
             "tecnologia": [TEC_ARQUITECTURA, TEC_ANDROID],
             "pagina": "",
             "imagen": ""
@@ -761,8 +761,8 @@ function getData(){
             "descripcion": {"es": "Dirigí y participé en la e implementación de la Plataforma Cloud de Fork Friends. Teniendo como misión, desarrollar toda la infraestructura de reservas, contenido, y cliente web (de cara a los restaurantes). Adicionalmente, estuve encargado del diseño y construcción del motor de pertinencia. Con este proyecto de emprendimiento participamos en Wayra Colombia en busca de inversión junto con más de 900 proyectos participantes, en donde estuvimos ubicados en los primeros 20 proyectos.", 
                             "en": "Directed and participated in the implementation of the Fork Friends Cloud Platform. Having as mission, to develop all the infrastructure of reservations, content, and web client (facing the restaurants). Additionally, I was in charge of the design and construction of the relevance engine. With this entrepreneurship project we participated in Wayra Colombia in search of investment along with more than 900 participating projects, where we were located in the first 20 projects.", 
                             "fr": "A dirigé et participé à la mise en œuvre de la plateforme Fork Friends Cloud. Ayant pour mission de développer toute l'infrastructure de réservation, de contenu et de client Web (en face des restaurants). De plus, j'étais en charge de la conception et de la construction du moteur de pertinence. Avec ce projet d’entrepreneuriat, nous avons participé à Wayra Colombia à la recherche d’investissements ainsi qu’à plus de 900 projets participants, où nous étions situés dans les 20 premiers projets."},
-            "cliente": CLI_PERSONAL,
-            "empleador": EMP_PERSONAL,
+            "cliente": CLI_SOFTONE,
+            "empleador": EMP_SOFTONE,
             "tecnologia": [TEC_JAVA, TEC_ARQUITECTURA, TEC_PRIMEFACES],
             "pagina": "",
             "imagen": ""
@@ -866,7 +866,7 @@ function getData(){
                             "en": "I made the design of the inventory application for the JAO Medical Center, and participated in its development and implementation. Using as NetBeans development tool, APACHE server, TOMCAT and MYSQL database.", 
                             "fr": "J'ai conçu l'application d'inventaire pour le centre médical JAO et participé à son développement et à sa mise en œuvre. Utilisation comme outil de développement NetBeans, serveur APACHE, base de données TOMCAT et MYSQL."},
             "cliente": CLI_JAO,
-            "empleador": EMP_PERSONAL,
+            "empleador": EMP_SOFTONE, //EMP_PERSONAL
             "tecnologia": [TEC_JAVA, TEC_STRUTS],
             "pagina": "",
             "imagen": ""
@@ -879,7 +879,7 @@ function getData(){
                             "en": "I participated in the development of the product module of the portfolio application for the Banco de la República. I used JDeveloper as a development tool, WebLogic as an application server and Oracle database.", 
                             "fr": "J'ai participé au développement du module de produit de l'application de portefeuille pour la Banco de la República. J'ai utilisé JDeveloper comme outil de développement, WebLogic comme serveur d'applications et base de données Oracle."},
             "cliente": CLI_BANCO_REPUBLICA,
-            "empleador": EMP_PERSONAL,
+            "empleador": EMP_SOFTONE, // EMP_PERSONAL
             "tecnologia": [TEC_JAVA, TEC_JSP],
             "pagina": "",
             "imagen": ""
