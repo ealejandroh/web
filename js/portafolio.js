@@ -8,6 +8,17 @@ const FILTRO_EMPLEADOR =  {"es": "Compañia: ",
                             "en": "Company: ", 
                             "fr": "Entreprise: "};
 
+const LABEL_CAMPOS =  {
+                        "Proyecto": { "es": "Proyecto: ", "en": "Project: ", "fr": "Projet: " },
+                        "Empresa": {"es": "Compañia: ", "en": "Company: ", "fr": "Enterprise: "},
+                        "Cliente": {"es": "Cliente: ", "en": "Client: ", "fr": "Client: "},
+                        "Descripcion": {"es": "Descripción del proyecto: ", "en": "Project description: ", "fr": "Description du Project: "},
+                        "Tecnologias": {"es": "Entorno tecnológico: ", "en": "Technological environment: ", "fr": "Environnement technologique: "},
+                        "Fecha": {"es": "Fecha: ", "en": "Date: ", "fr": "Date: "},
+                        "Duracion": {"es": "Duración: ", "en": "Duration: ", "fr": "Durée: "}};
+
+let VERSION_COPY_DETAIL = false;
+
 function getData(){
 
     const TEC_JAVA = "Java";
@@ -1176,9 +1187,6 @@ function getFiltrosInicio(portafolios){
 
         let filtrosHtml = `<h3 class="filtros-activos filtrosInicio">`;
 
-        filtrosHtml = filtrosHtml + `<a href="#" onclick='return filtroXCliente("${CLI_PERSONAL[language]}")'>${CLI_PERSONAL[language]} (3)</a> - `;
-
-        
         for(let portafolio of portafolios){
 
             for(let tecnologia of portafolio.tecnologia){
@@ -1244,6 +1252,7 @@ function getTrabajos(portafolios, filtro){
             const tituloLg = portafolio.titulo[language] == null ? portafolio.titulo : portafolio.titulo[language];
             const imagenLg = portafolio.imagen[language] == null ? portafolio.imagen : portafolio.imagen[language];
             const clienteLg = portafolio.cliente[language] == null ? portafolio.cliente : portafolio.cliente[language];
+            const empleadorLg = portafolio.empleador[language] == null ? portafolio.empleador : portafolio.empleador[language];
             const descripcionLg = portafolio.descripcion[language] == null ? portafolio.descripcion : portafolio.descripcion[language];
             const fecha = portafolio.fecha[language] == null ? portafolio.fecha : portafolio.fecha[language];
             let duracion = portafolio.duracionMeses == null ? "" : portafolio.duracionMeses;
@@ -1296,33 +1305,58 @@ function getTrabajos(portafolios, filtro){
             let tecText = ``;
             for(let tec of portafolio.tecnologia){
                 let tecLg = tec[language] == null ? tec : tec[language];
-                tecText = tecText + ` <span><a href='' onclick='return filtroXTecnologia("${tecLg}")'>${tecLg}</a> |</span>`;
+                if(VERSION_COPY_DETAIL){
+                    tecText = tecText + ` ${tecLg}, `;
+                }else{
+                    tecText = tecText + ` <span><a href='' onclick='return filtroXTecnologia("${tecLg}")'>${tecLg}</a> |</span>`;
+                }
+            }
+
+            if(VERSION_COPY_DETAIL){
+                tecText = tecText.substring(0, tecText.length - 2);
             }
             
             if(indexRow%2 == 0){
                 div = div + `<div class="row">`;
             }
 
-            div = div + `<div class="col-sm-6 col-xs-12">
+            if(VERSION_COPY_DETAIL){
+                div = div + `<div class="col-sm-6 col-xs-12">
                             <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                                 <figcaption>
-                                    ${titulo}
-                                    <div class="blog-meta meta-portafolio">
-                                        <span>${clienteLabel}<a href='' onclick='return filtroXCliente("${clienteLg}")'>${clienteLg}</a></span>
-                                    </div>
-                                    <div class="blog-meta meta-portafolio">
-                                        <span>${fecha} (${duracion})</span>
-                                    </div>
-                                </figcaption>
-                                ${imagen}
-                                <figcaption>
-                                    <p>${descripcionLg}</p>
-                                    <div class="blog-meta meta-portafolio tecs-portafolio">
-                                        ${tecText}
-                                    </div>
+                                    <div><b>${LABEL_CAMPOS.Proyecto[language]}</b> ${tituloLg}</div>
+                                    <div><b>${LABEL_CAMPOS.Empresa[language]}</b> ${empleadorLg}</div>
+                                    <div><b>${LABEL_CAMPOS.Cliente[language]}</b> ${clienteLg}</div>
+                                    <div><b>${LABEL_CAMPOS.Descripcion[language]}</b> ${descripcionLg}</div>
+                                    <div><b>${LABEL_CAMPOS.Tecnologias[language]}</b> ${tecText}</div>
+                                    <div><b>${LABEL_CAMPOS.Fecha[language]}</b> ${fecha}</div>
+                                    <div><b>${LABEL_CAMPOS.Duracion[language]}</b> ${duracion}</div>
+                                    <br/>
                                 </figcaption>
                             </figure>
                         </div>`;
+            }else{
+                div = div + `<div class="col-sm-6 col-xs-12">
+                        <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+                            <figcaption>
+                                ${titulo}
+                                <div class="blog-meta meta-portafolio">
+                                    <span>${clienteLabel}<a href='' onclick='return filtroXCliente("${clienteLg}")'>${clienteLg}</a></span>
+                                </div>
+                                <div class="blog-meta meta-portafolio">
+                                    <span>${fecha} (${duracion})</span>
+                                </div>
+                            </figcaption>
+                            ${imagen}
+                            <figcaption>
+                                <p>${descripcionLg}</p>
+                                <div class="blog-meta meta-portafolio tecs-portafolio">
+                                    ${tecText}
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>`;
+            }
 
             if(indexRow%2 != 0){
                 div = div + `</div>`;
@@ -1507,10 +1541,6 @@ window.onload = function() {
         getTrabajos(portafolios);
         getPersonales(portafolios);
         getFiltrosInicio(portafolios);
-
-        // Ocultar clientes porque la lista es muy grande
-        document.getElementById("clientesDiv").style.display = "none";
-
     }catch(error){
         console.log('Error en onLoad: ', error);
     }

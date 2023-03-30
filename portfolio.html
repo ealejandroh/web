@@ -143,23 +143,49 @@
                     </div>
                     <div class="col-md-4">
                         <div class="sidebar">
-                            <div class="categories widget">
-                                <h3 class="widget-head" style="display: inline-block;">Compañias</h3>
-                                <ul id="personales-container">
-                                    <!-- AQUI VA LA LISTA DE PERSONALES -->
-                                </ul>
-                            </div>
-                            <div class="categories widget" id="clientesDiv">
-                                <h3 class="widget-head">Clientes</h3>
-                                <ul id="clientes-container">
-                                    <!-- AQUI VA LA LISTA DE CLIENTES -->
-                                </ul>
-                            </div>
-                            <div class="categories widget">
-                                <h3 class="widget-head">Tecnologias</h3>
-                                <ul id="tecnologia-container">
-                                    <!-- AQUI VA LA LISTA DE TECNOLOGIAS -->
-                                </ul>
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default categories widget">
+                                    <div class="panel-flechita">
+                                        <h3 class="widget-head">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseEmp">
+                                                Compañias
+                                            </a>
+                                        </h3>
+                                    </div>
+                                    <div id="collapseEmp" class="panel-collapse collapse in">
+                                        <ul id="personales-container">
+                                            <!-- AQUI VA LA LISTA DE EMPLEADORES -->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default categories widget">   
+                                    <div class="panel-flechita">
+                                        <h3 class="widget-head">
+                                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTec">
+                                                Tecnologias
+                                            </a>
+                                        </h3>
+                                    </div> 
+                                    <div id="collapseTec" class="panel-collapse collapse">
+                                        <ul id="tecnologia-container">
+                                            <!-- AQUI VA LA LISTA DE TECNOLOGIAS -->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default categories widget">
+                                    <div class="panel-flechita">
+                                        <h3 class="widget-head">
+                                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseCli">
+                                                Clientes
+                                            </a>
+                                        </h3>
+                                    </div>
+                                    <div id="collapseCli" class="panel-collapse collapse">
+                                        <ul id="clientes-container">
+                                            <!-- AQUI VA LA LISTA DE CLIENTES -->
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

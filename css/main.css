@@ -921,7 +921,7 @@ article {
   margin-top: 30px;
 }
 .sidebar {
-  padding-top: 60px;
+  padding-top: 0px;
 }
 .sidebar .widget {
   margin-bottom: 40px;
@@ -1157,4 +1157,12 @@ article {
 #feature h3 {
   text-transform: none;
   text-align: left;
+}
+
+.panel-flechita .accordion-toggle:after {
+  content: '⬇';
+  float: right;
+}
+.panel-flechita .accordion-toggle.collapsed:after {
+  content: "▶";
 }
