@@ -4,13 +4,13 @@ const FILTRO_CLIENTES =    {"es": "Filtro: ",
 const FILTRO_TECNOLOGIA =  {"es": "Tecnología: ", 
                             "en": "Technology: ", 
                             "fr": "La technologie: "};
-const FILTRO_EMPLEADOR =  {"es": "Compañia: ", 
+const FILTRO_EMPLEADOR =  {"es": "Compañía: ", 
                             "en": "Company: ", 
                             "fr": "Entreprise: "};
 
 const LABEL_CAMPOS =  {
                         "Proyecto": { "es": "Proyecto: ", "en": "Project: ", "fr": "Projet: " },
-                        "Empresa": {"es": "Compañia: ", "en": "Company: ", "fr": "Enterprise: "},
+                        "Empresa": {"es": "Compañía: ", "en": "Company: ", "fr": "Enterprise: "},
                         "Cliente": {"es": "Cliente: ", "en": "Client: ", "fr": "Client: "},
                         "Descripcion": {"es": "Descripción del proyecto: ", "en": "Project description: ", "fr": "Description du Project: "},
                         "Tecnologias": {"es": "Entorno tecnológico: ", "en": "Technological environment: ", "fr": "Environnement technologique: "},
@@ -24,7 +24,7 @@ function getData(){
     const TEC_JAVA = "Java";
     const TEC_ANGULAR = "Angular";
     const TEC_MICROSERVICIOS = {"es": "Microservicios", "en": "Microservices", "fr": "Microservices"};
-    const TEC_SPRING = "Spring";
+    const TEC_SPRING = "Spring / Spring Boot";
     const TEC_PRIMEFACES = "PrimeFaces";
     const TEC_RICHFACES = "RichFaces";
     const TEC_STRUTS = "Struts";
@@ -88,6 +88,81 @@ function getData(){
                         "fr": "Personnel"};
     
     let portafolios = [
+        {
+            "titulo": { "es": "Integración con SIAFP", 
+                        "en": "Integration with SIAFP", 
+                        "fr": "Intégration avec SIAFP" },
+            "fecha": {"es": "Julio, 2023", "en": "July, 2023", "fr": "Juillet, 2023"},
+            "duracionMeses": "1",
+            "descripcion": {"es": "Implementación de conector para comunicación entre Colfondos y Asofondos para procesamiento de novedades de afiliación entre los diferentes fondos de pensiones y cesantías. La comunicación se realiza mediante servicios SOAP asegurados con ws security.", 
+                            "en": "Implementation of a connector for communication between Colfondos and Asofondos for the processing of affiliation news between the different pension and severance funds. The communication is done through SOAP services secured with ws security.", 
+                            "fr": "Mise en place d'un connecteur de communication entre Colfondos et Asofondos pour le traitement des actualités d'affiliation entre les différentes caisses de retraite et indemnités de départ. La communication se fait via des services SOAP sécurisés avec ws security." },
+            "cliente": CLI_COLFONDOS,
+            "empleador": EMP_SOFTONE,
+            "tecnologia": [TEC_JAVA, TEC_SPRING, TEC_MICROSERVICIOS, TEC_ARQUITECTURA],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": { "es": "Deber de asesoría", 
+                        "en": "Duty of advice", 
+                        "fr": "Devoir de conseil" },
+            "fecha": {"es": "Mayo, 2023", "en": "May, 2023", "fr": "Mai, 2023"},
+            "duracionMeses": "2",
+            "descripcion": {"es": "Definición e implementación de arquitectura para el módulo de deber de asesoría para realizar el calculo de perfil de riesgo del cliente y mediante un análisis de conveniencia y validar si corresponde con sus inversiones en los diferentes fondos, para proponer una recomendación profesional.", 
+                            "en": "Definition and implementation of architecture for the advisory duty module to calculate the client's risk profile and through a suitability analysis and validate if it corresponds to their investments in the different funds, to propose a professional recommendation.", 
+                            "fr": "Définition et mise en place de l'architecture du module de mission de conseil pour calculer le profil de risque du client et par une analyse d'adéquation et valider s'il correspond à ses investissements dans les différents fonds, proposer une recommandation professionnelle." },
+            "cliente": CLI_COLFONDOS,
+            "empleador": EMP_SOFTONE,
+            "tecnologia": [TEC_JAVA, TEC_SPRING, TEC_PORTAL, TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": { "es": "Certificados de declaración de renta", 
+                        "en": "Income statement certificates", 
+                        "fr": "Certificats de compte de résultat" },
+            "fecha": {"es": "Marzo, 2023", "en": "March, 2023", "fr": "Mars, 2023"},
+            "duracionMeses": "2",
+            "descripcion": {"es": "Definición e implementación de módulo de generación de certificados de renta en formato PDF permitiendo un diseño gráfico parametrizable, para los productos de pensiones voluntarias, pensiones obligatorias y cesantías.", 
+                            "en": "Definition and implementation of a module for generating income certificates in PDF format, allowing a parameterizable graphic design, for voluntary pension, mandatory pension and severance products.", 
+                            "fr": "Définition et mise en place d'un module de génération d'attestations de revenus au format PDF, permettant une conception graphique paramétrable, pour les produits de retraite volontaire, de retraite obligatoire et d'indemnité de départ." },
+            "cliente": CLI_COLFONDOS,
+            "empleador": EMP_SOFTONE,
+            "tecnologia": [TEC_JAVA, TEC_SPRING, TEC_PORTAL, TEC_PORTLET],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": { "es": "Procesos omisos", 
+                        "en": "Ignored processes", 
+                        "fr": "Processus ignorés" },
+            "fecha": {"es": "Febrero, 2023", "en": "February, 2023", "fr": "Février, 2023"},
+            "duracionMeses": "1",
+            "descripcion": {"es": "Realicé la implementación de un nuevo método de autenticación al ecosistema de microservicios de Colfondos, por medio de un ApiKey para un grupo de servicios externos a la compañía.", 
+                            "en": "I implemented a new authentication method to the Colfondos microservices ecosystem, through an ApiKey for a group of services external to the company.", 
+                            "fr": "J'ai implémenté une nouvelle méthode d'authentification à l'écosystème de microservices Colfondos, via une ApiKey pour un groupe de services externes à l'entreprise." },
+            "cliente": CLI_COLFONDOS,
+            "empleador": EMP_SOFTONE,
+            "tecnologia": [TEC_JAVA, TEC_MICROSERVICIOS, TEC_SPRING],
+            "pagina": "",
+            "imagen": ""
+        },
+        {
+            "titulo": { "es": "Pagos de pensiones voluntarias", 
+                        "en": "Voluntary pension payments", 
+                        "fr": "Paiements de pension volontaires" },
+            "fecha": {"es": "Enero, 2023", "en": "January, 2023", "fr": "Janvier, 2023"},
+            "duracionMeses": "1",
+            "descripcion": {"es": "Realicé la definición técnica para módulo de notificaciones vía sms e email de forma asíncrona dentro del proceso de pagos de pensiones voluntarias para prevenir riesgo de fraude.", 
+                            "en": "I made the technical definition for the notification module via sms and email asynchronously within the voluntary pension payment process to prevent fraud risk.", 
+                            "fr": "J'ai réalisé la définition technique du module de notification par sms et email de manière asynchrone dans le cadre du processus de paiement volontaire de la pension pour prévenir les risques de fraude." },
+            "cliente": CLI_COLFONDOS,
+            "empleador": EMP_SOFTONE,
+            "tecnologia": [TEC_JAVA, TEC_MICROSERVICIOS, TEC_SPRING, TEC_ARQUITECTURA],
+            "pagina": "",
+            "imagen": ""
+        },
         {
             "titulo": { "es": "BPM v3", 
                         "en": "BPM v3", 
@@ -1541,6 +1616,8 @@ window.onload = function() {
         getTrabajos(portafolios);
         getPersonales(portafolios);
         getFiltrosInicio(portafolios);
+        console.log('Version texto: VERSION_COPY_DETAIL=true;');
+        console.log('Luego click en cualquier filtro.');
     }catch(error){
         console.log('Error en onLoad: ', error);
     }
